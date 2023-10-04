@@ -1,0 +1,44 @@
+// LULUS jika >= 60
+// TIDAK LULUS jika 
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // uni km bisa mengganti kalimat "Masukkan nilai anda" dengan kalimat lain,
+        // contoh: "Sumbit ur value plz". atau apapun yang kamu mau :p
+
+        System.out.print("Masukkan nilai Anda: ");
+        int nilai = input.nextInt();
+
+        // untuk keterangan kamu bisa menggantinya dengan Hasil
+        String keterangan = "";
+        // dan untuk grade, kamu mau tambahkan menjadi Grade Nilai seperti yang
+        // diperintahkan tugas juga boleh
+        String grade = "";
+
+        if (nilai >= 80 && nilai >= 70) {
+            keterangan = "LULUS";
+            grade = "A";
+        } else if (nilai < 80 && nilai >= 60) {
+            keterangan = "LULUS";
+            grade = "B";
+        } else if (nilai < 70 && nilai >= 50) {
+            keterangan = "TIDAK LULUS";
+            grade = "C";
+        } else if (nilai < 60) {
+            keterangan = "TIDAK LULUS";
+            grade = "D";
+        } else if (nilai < 50) {
+            keterangan = "TIDAK LULUS";
+            grade = "E";
+        }
+
+        System.out.println("Keterangan: " + keterangan);
+        System.out.println("Grade Nilai: " + grade);
+
+        input.close();
+    }
+}
