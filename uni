@@ -1,5 +1,9 @@
 // LULUS jika >= 60
-// TIDAK LULUS jika 
+// TIDAK LULUS jika < 60
+
+// p.s. kalo kode ini sampe beneran salah, yang salah bukan akunya tapi yang ngajarnya. hehehe im so sorry maam
+
+// another p.s. remember that else-if use "&&"
 
 import java.util.Scanner;
 
@@ -9,10 +13,8 @@ public class Main {
 
         // uni km bisa mengganti kalimat "Masukkan nilai anda" dengan kalimat lain,
         // contoh: "Sumbit ur value plz". atau apapun yang kamu mau :p
-
         System.out.print("Masukkan nilai Anda: ");
         int nilai = input.nextInt();
-
         // untuk keterangan kamu bisa menggantinya dengan Hasil
         String keterangan = "";
         // dan untuk grade, kamu mau tambahkan menjadi Grade Nilai seperti yang
