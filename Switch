@@ -1,0 +1,107 @@
+import java.util.Scanner;
+
+public class Switch {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String jenisSusu;
+        int ukuranKaleng;
+        double hargaSatuan = 0;
+        int jumlahBeli;
+        double totalHarga = 0;
+
+        do {
+            System.out.println("Layar Masukkan");
+            System.out.println("TOKO KELONTONG KERONCONGAN");
+            System.out.println("--------------------------");
+            System.out.println("A. Susu Dancow");
+            System.out.println("     1. Ukuran Kecil");
+            System.out.println("     2. Ukuran Sedang");
+            System.out.println("     3. Ukuran Besar");
+            System.out.println("B. Susu Bendera");
+            System.out.println("     1. Ukuran Kecil");
+            System.out.println("     2. Ukuran Sedang");
+            System.out.println("     3. Ukuran Besar");
+            System.out.println("C. Susu SGM");
+            System.out.println("     1. Ukuran Kecil");
+            System.out.println("     2. Ukuran Sedang");
+            System.out.println("     3. Ukuran Besar");
+
+            System.out.print("Masukan Jenis Susu : ");
+            jenisSusu = input.next();
+
+            System.out.print("Masukan Ukuran Kaleng : ");
+            ukuranKaleng = input.nextInt();
+
+            // Set harga satuan berdasarkan jenis susu dan ukuran kaleng using switch
+            switch (jenisSusu) {
+                case "A":
+                    switch (ukuranKaleng) {
+                        case 1:
+                            hargaSatuan = 25000.0;
+                            break;
+                        case 2:
+                            hargaSatuan = 20000.0;
+                            break;
+                        case 3:
+                            hargaSatuan = 15000.0;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "B":
+                    // Set harga untuk Susu Bendera using nested switch
+                    switch (ukuranKaleng) {
+                        case 1:
+                            hargaSatuan = 20000.0;
+                            break;
+                        case 2:
+                            hargaSatuan = 17500.0;
+                            break;
+                        case 3:
+                            hargaSatuan = 13500.0;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "C":
+                    // Set harga untuk Susu SGM using nested switch
+                    switch (ukuranKaleng) {
+                        case 1:
+                            hargaSatuan = 22000.0;
+                            break;
+                        case 2:
+                            hargaSatuan = 18500.0;
+                            break;
+                        case 3:
+                            hargaSatuan = 15000.0;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    System.out.println("Jenis susu tidak valid.");
+                    continue; // Kembali ke awal loop
+            }
+
+            System.out.print("Harga Satuan Barang Rp. " + hargaSatuan);
+            System.out.println();
+            System.out.print("Jumlah Yang dibeli : ");
+            jumlahBeli = input.nextInt();
+
+            totalHarga = hargaSatuan * jumlahBeli;
+            System.out.println("Harga Yang Harus dibayar Sebesar Rp. " + totalHarga);
+
+            System.out.print("Transaksi jual beli diulang (Y/N)? ");
+            String ulangi = input.next();
+
+            if (!ulangi.equalsIgnoreCase("Y")) {
+                break; // Keluar dari loop jika tidak ingin mengulang transaksi
+            }
+        } while (true);
+
+        System.out.println("Terima kasih atas pembeliannya!");
+    }
+}
